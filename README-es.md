@@ -9,17 +9,10 @@ Este repositorio es el **punto de partida para el proyecto personal de cada estu
 - **Para Estudiantes:** Un repositorio personal para construir un proyecto web paso a paso, siguiendo las lecciones. Se publica en vivo mediante GitHub Pages.
 - **Para Profesores:** Un espacio para observar el progreso semanal de cada estudiante, su historial de commits y el proyecto final.
 
-## Tecnologías Principales (Explicación Detallada)
-
 ### GitHub Pages
 
 - Los estudiantes habilitan Pages en su repositorio para publicar el proyecto en vivo en una URL como `https://usuario.github.io/proyecto`.
 - El despliegue es automático: cada commit en `main` actualiza el sitio.
-
-### Jekyll
-
-- No es necesario que los estudiantes lo usen directamente, pero Pages lo emplea en segundo plano.
-- Se incluye un archivo `.nojekyll` para evitar conflictos, salvo que se requiera explícitamente.
 
 ### GitHub Actions
 
