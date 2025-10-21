@@ -1,5 +1,7 @@
 @import url("http://meyerweb.com/eric/tools/css/reset/reset.css"); /* CSS Reset para compatibilidad entre navegadores */
-@import url("style.css"); /* Estilos principales */ /* ===== PORTAFOLIO RESPONSIVE BÁSICO (MOBILE-FIRST) ===== */
+@import url("style.css"); /* Estilos principales */
+
+/* ===== PORTAFOLIO RESPONSIVE BÁSICO (MOBILE-FIRST) ===== */
 /*
  * ESTRATEGIA MOBILE-FIRST:
  * 1. Estilos base ahora son móviles (pantallas pequeñas)
@@ -22,9 +24,12 @@
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== BODY ===== */
 body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+  background-color: #0b1d3f; /* Fondo azul elegante */
+  color: #ffffff; /* Texto principal en blanco para contraste */
 }
 
 /* ===== CONTAINER BÁSICO ===== */
@@ -34,10 +39,10 @@ body {
   padding: 0 var(--spacing-sm);
 }
 
-/* ===== HEADER RESPONSIVO (Mobile-First: estilos base para móvil) ===== */
+/* ===== HEADER RESPONSIVO ===== */
 .site-header {
-  background: var(--primary-color);
-  color: white;
+  background: #f59e0b; /* Naranja para contraste con azul oscuro */
+  color: #0b1d3f; /* Texto azul oscuro */
   padding: var(--spacing-md) 0;
 }
 
@@ -76,31 +81,31 @@ body {
 .hero-section {
   text-align: center;
   padding: var(--spacing-lg) 0; /* Móvil: padding reducido */
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
-  color: white;
+  background: linear-gradient(135deg, #0b1d3f 0%, #1e3a8a 100%);
+  color: #ffffff;
   margin: var(--spacing-lg) 0;
   border-radius: var(--border-radius);
 }
 
-.hero-section h2 {
-  font-size: 1.25rem; /* Móvil: texto más pequeño */
-  margin-bottom: var(--spacing-sm);
+.hero-section h2,
+.projects-section h2,
+.about-section h2,
+.contact-section h2 {
+  font-size: 2.5rem; /* Títulos más grandes */
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: #ffffff; /* Asegura buena legibilidad sobre azul oscuro */
 }
 
 .hero-section p {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-lg);
   opacity: 0.9;
+  color: #cbd5e1; /* Gris claro para buena legibilidad sobre azul oscuro */
 }
 
 .projects-section {
   margin: var(--spacing-xl) 0;
-}
-
-.projects-section h2 {
-  text-align: center;
-  font-size: 1.5rem; /* Móvil: tamaño moderado */
-  margin-bottom: var(--spacing-lg);
 }
 
 /* ===== GRID DE PROYECTOS CON FLEXBOX ===== */
@@ -114,7 +119,7 @@ body {
 .project-card {
   width: 100%; /* Móvil: ancho completo */
   max-width: 100%;
-  background: var(--white);
+  background: #243754; /* Color elegante para las tarjetas */
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -138,10 +143,11 @@ body {
 .project-info h3 {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-sm);
+  color: #ffffff; /* Texto principal de la tarjeta en blanco */
 }
 
 .project-info p {
-  color: var(--secondary-color);
+  color: #cbd5e1; /* Texto secundario en gris claro para legibilidad */
   margin-bottom: var(--spacing-md);
   font-size: 0.875rem;
 }
@@ -154,7 +160,7 @@ body {
 }
 
 .tag {
-  background: var(--primary-color);
+  background: #2563eb; /* Azul brillante para contraste con azul oscuro */
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -164,8 +170,8 @@ body {
 
 /* ===== BOTÓN CTA ===== */
 .cta-button {
-  background: var(--accent-color);
-  color: white;
+  background: #f59e0b; /* Naranja para contraste */
+  color: #0b1d3f;
   padding: var(--spacing-sm) var(--spacing-lg);
   text-decoration: none;
   border-radius: var(--border-radius);
@@ -178,13 +184,7 @@ body {
   background: #d97706;
 }
 
-/* ===== MEDIA QUERIES (Mobile-First: Progressive Enhancement) ===== */
-/*
- * ESTRATEGIA MOBILE-FIRST:
- * - Estilos base son para móvil (ya definidos arriba)
- * - min-width agrega estilos para pantallas más grandes
- * - Progressive enhancement - mejoramos la experiencia conforme crece la pantalla
- */
+/* ===== MEDIA QUERIES ===== */
 
 /* Tablet: 2-3 columnas - 481px+ */
 @media (min-width: 481px) {
@@ -205,11 +205,11 @@ body {
   }
 
   .hero-section h2 {
-    font-size: 1.5rem;
+    font-size: 2.75rem; /* Ajuste un poco mayor en tablet */
   }
 
   .projects-section h2 {
-    font-size: 1.75rem;
+    font-size: 2.75rem;
   }
 }
 
@@ -241,7 +241,7 @@ body {
   }
 
   .hero-section h2 {
-    font-size: 2rem; /* Desktop: títulos más grandes */
+    font-size: 3rem; /* Títulos más grandes en desktop */
   }
 
   .hero-section p {
@@ -275,7 +275,7 @@ p {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background: var(--secondary-color);
+  background: #64748b; /* Gris azulado para contraste elegante */
   color: white;
   text-align: center;
   padding: var(--spacing-lg) 0;
