@@ -41,8 +41,8 @@ body {
 
 /* ===== HEADER RESPONSIVO ===== */
 .site-header {
-  background: #f59e0b; /* Naranja para contraste con azul oscuro */
-  color: #0b1d3f; /* Texto azul oscuro */
+  background: #0b1d3f; /* Cambiado a azul oscuro */
+  color: #ffffff; /* Texto en blanco para contraste */
   padding: var(--spacing-md) 0;
 }
 
@@ -299,4 +299,22 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+/* ===== ANÁLISIS EN DOS COLUMNAS PARA TODOS LOS SITIOS ===== */
+main article.analisis {
+  column-count: 2; /* Divide el contenido en 2 columnas */
+  column-gap: 2rem; /* Espacio entre columnas */
+}
+
+main article.analisis h3,
+main article.analisis p,
+main article.analisis ul {
+  break-inside: avoid; /* Evita que títulos, párrafos o listas se rompan entre columnas */
+}
+
+/* ===== RESPONSIVE: 1 columna en pantallas pequeñas ===== */
+@media (max-width: 768px) {
+  main article.analisis {
+    column-count: 1;
+  }
 }

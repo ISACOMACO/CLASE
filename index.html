@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta
       name="description"
       content="Análisis comparativo de cuatro sitios web — Proyecto WEB ATELIER (UDIT)"
@@ -10,9 +10,9 @@
       name="keywords"
       content="análisis web, diseño web, usabilidad, accesibilidad"
     />
-    <meta name="author" content="Tu Nombre" />
+    <meta name="author" content="Isaac Piña Portillo" />
     <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Análisis de Webs — WEB ATELIER (UDIT)</title>
 
     <!-- Tipografías -->
@@ -28,404 +28,329 @@
   </head>
 
   <body>
-    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <a class="skip-link sr-only" href="#main">Saltar al contenido principal</a>
 
-    <header>
+    <header class="site-header" role="banner">
       <div class="container">
-        <h1>Análisis de 4 sitios web</h1>
-        <p>Proyecto de estudiante — WEB ATELIER (UDIT)</p>
+        <div>
+          <h1 class="site-title">Análisis de 4 sitios web</h1>
+          <p>Proyecto de estudiante — WEB ATELIER (UDIT)</p>
+        </div>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="#sitio-1">1917</a></li>
+            <li><a href="#Hyer">Hyer</a></li>
+            <li><a href="#Buttermax">Buttermax</a></li>
+            <li><a href="#Gufram">Gufram</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <main id="main" class="container">
-      <!-- ===================================================== -->
-      <!-- 🟢 SECCIÓN 1: ANÁLISIS DEL SITIO 1 -->
-      <!-- ===================================================== -->
-      <section id="sitio-1">
-        <h2>1. 1917: Into the Trenches</h2>
+    <main id="main" class="container" role="main">
+      <!-- SECCIÓN 1 -->
+      <section id="sitio-1" aria-labelledby="h-sitio-1">
+        <h2 id="h-sitio-1">1. 1917: Into the Trenches</h2>
 
-        <!-- IFRAME DEL SITIO -->
-        <iframe
-          src="https://intothetrenches.1917.movie"
-          title="Sitio web 1917: Into teh Trenches"
-          aria-label="Vista previa del sitio PonPon Mania"
-          width="100%"
-          height="400"
-          loading="lazy"
-    
-  ></iframe>
-<article class="analisis">
-          <h3>Análisis visual y de usabilidad</h3>
-          <p></p>
-  <!-- ANÁLISIS DEL SITIO -->
-  <article class="analisis">
-    <h3>1. Selección: ¿Por qué elegí este sitio premiado?</h3>
-    <p>
-      Este sitio fue reconocido como <em>Site of the Day</em> por Awwwards en
-      marzo de 2020. Destaca por ofrecer una experiencia inmersiva en 3D que
-      permite al usuario adentrarse en las trincheras de la película
-      <strong>1917</strong>. Combina narrativa, tecnología y diseño de forma
-      excepcional, lo que lo convierte en un gran ejemplo de excelencia digital.
-    </p>
+        <figure>
+          <iframe
+            src="https://intothetrenches.1917.movie"
+            title="Vista previa: 1917 — Into the Trenches"
+            aria-label="Vista previa del sitio 1917 — Into the Trenches"
+            width="100%"
+            height="400"
+            loading="lazy"
+          ></iframe>
+          <figcaption>Preview del sitio — 1917: Into the Trenches</figcaption>
+        </figure>
 
-    <h3>2. Impresión inicial: ¿Qué sensaciones produce?</h3>
-    <p>
-      Desde el primer momento, transmite tensión, oscuridad y realismo. La
-      atmósfera inmersiva y la ambientación bélica hacen sentir al usuario como
-      si estuviera dentro de la película. La web se percibe más como una
-      experiencia interactiva que como una página tradicional.
-    </p>
+        <article class="analisis" aria-labelledby="sitio1-resumen">
+          <h3 id="sitio1-resumen">Análisis visual y de usabilidad</h3>
 
-    <h3>3. Estructura: ¿Cómo está organizada la información?</h3>
-    <p>
-      La navegación se desarrolla dentro de un entorno 3D. En lugar de un menú
-      clásico, el usuario explora un mapa interactivo de las trincheras, donde
-      puede acceder a contenido adicional: detrás de escenas, entrevistas,
-      exploración de sets y experiencias en AR/VR.
-    </p>
-    <ul>
-      <li>Inicio: introducción inmersiva al universo de la película.</li>
-      <li>Exploración: desplazamiento por el entorno 3D.</li>
-      <li>Contenido: making-of, entrevistas, material interactivo.</li>
-    </ul>
-
-    <h3>4. Visual: Paleta, tipografía, branding</h3>
-    <p>
-      La paleta usa tonos oscuros (negros, grises, marrones oxidados) con toques
-      metálicos y rojos terrosos. La tipografía es robusta y militar, en
-      mayúsculas, reforzando la fuerza visual del branding. El diseño mantiene
-      coherencia total con la estética de la película.
-    </p>
-
-    <h3>5. Interacción: Animaciones, efectos, microinteracciones</h3>
-    <p>
-      El sitio utiliza navegación 3D WebGL, animaciones suaves y transiciones de
-      cámara. Las microinteracciones dan feedback al pasar el cursor o hacer
-      clic. Cada movimiento genera sensación de profundidad y exploración, como
-      en un videojuego.
-    </p>
-
-    <h3>6. Usabilidad: Claridad, accesibilidad, carga</h3>
-    <p>
-      La claridad visual es alta, aunque la navegación puede resultar compleja
-      para usuarios no acostumbrados a entornos 3D. La accesibilidad es limitada
-      (poco soporte para teclado o lectores de pantalla), y el rendimiento puede
-      verse afectado por el peso de los recursos 3D. Sin embargo, para su público
-      objetivo, la experiencia es sobresaliente.
-    </p>
-
-    <h3>7. Técnico: Velocidad, semántica, Core Web Vitals</h3>
-    <p>
-      Al usar modelos 3D y texturas pesadas, la velocidad de carga puede ser
-      elevada. El uso intensivo de <code>canvas</code> y WebGL puede afectar la
-      semántica HTML y el SEO. Aun así, mantiene buenas métricas de estabilidad y
-      respuesta, destacando en animaciones y optimización gráfica.
-    </p>
-
-    <h3>8. Criterios de excelencia: Creatividad, contenido, UX</h3>
-    <p>
-      La creatividad es uno de los puntos más fuertes: convierte un sitio
-      promocional en una experiencia interactiva. El contenido es coherente y
-      aporta valor añadido al usuario. La UX es envolvente y memorable, aunque
-      más pensada para exploradores digitales que para público general.
-    </p>
-
-    <h3>9. Conclusión: Puntos fuertes, debilidades y aprendizajes</h3>
-    <ul>
-      <li>
-        <strong>Puntos fuertes:</strong> inmersión, narrativa visual,
-        integración con la película y experiencia emocional.
-      </li>
-      <li>
-        <strong>Debilidades:</strong> alta demanda de recursos, accesibilidad
-        limitada y curva de aprendizaje en la navegación.
-      </li>
-      <li>
-        <strong>Aprendizajes:</strong> una web puede ser una experiencia viva y
-        narrativa; sin embargo, la creatividad debe equilibrarse con rendimiento
-        y accesibilidad.
-      </li>
-    </ul>
-  </article>
-</section>
+          <h4>1. Selección: ¿Por qué elegí este sitio premiado?</h4>
+          <p>
+            Este sitio fue reconocido como <em>Site of the Day</em> por Awwwards
+            en marzo de 2020. Destaca por ofrecer una experiencia inmersiva en
+            3D que permite al usuario adentrarse en las trincheras de la
+            película <strong>1917</strong>.
           </p>
+
+          <h4>2. Impresión inicial: ¿Qué sensaciones produce?</h4>
+          <p>
+            Transmite tensión, oscuridad y realismo. La atmósfera inmersiva y la
+            ambientación bélica hacen sentir al usuario dentro de la película.
+          </p>
+
+          <h4>3. Estructura</h4>
+          <p>
+            Navegación basada en un entorno 3D/interactivo: exploración por mapa
+            y accesos a making-of, entrevistas y experiencias AR/VR.
+          </p>
+
+          <h4>4. Visual</h4>
+          <p>
+            Paleta oscura, tipografía robusta y coherencia visual con la
+            estética de la película.
+          </p>
+
+          <h4>5. Interacción</h4>
+          <p>
+            WebGL, animaciones y microinteracciones que generan sensación de
+            profundidad.
+          </p>
+
+          <h4>6. Usabilidad</h4>
+          <p>
+            Experiencia inmersiva pero con accesibilidad limitada y requisitos
+            de recursos elevados.
+          </p>
+
+          <h4>7. Técnico</h4>
+          <p>
+            Uso intensivo de canvas/WebGL que puede afectar SEO y rendimiento si
+            no se optimiza.
+          </p>
+
+          <h4>8. Criterios de excelencia</h4>
+          <p>Creatividad alta, contenido coherente y experiencia memorable.</p>
+
+          <h4>9. Conclusión</h4>
+          <ul>
+            <li><strong>Puntos fuertes:</strong> inmersión y narrativa.</li>
+            <li>
+              <strong>Debilidades:</strong> accesibilidad y peso de recursos.
+            </li>
+            <li>
+              <strong>Aprendizajes:</strong> equilibrar creatividad con
+              rendimiento y accesibilidad.
+            </li>
+          </ul>
         </article>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- 🟣 SECCIÓN 2: ANÁLISIS DEL SITIO 2 -->
-      <!-- ===================================================== -->
-      <section id="Hyer">
-        <h2>2. Hyer</h2>
+      <!-- SECCIÓN 2 -->
+      <section id="Hyer" aria-labelledby="h-Hyer">
+        <h2 id="h-Hyer">2. Hyer</h2>
 
-        <iframe
-          src="https://www.flyhyer.com"
-          title="Hyer"
-          aria-label="Vista previa del sitio 2"
-          width="100%"
-          height="400"
-          loading="lazy"
-        ></iframe>
+        <figure>
+          <iframe
+            src="https://www.flyhyer.com"
+            title="Vista previa: Hyer"
+            aria-label="Vista previa del sitio Hyer"
+            width="100%"
+            height="400"
+            loading="lazy"
+          ></iframe>
+          <figcaption>Preview del sitio — Hyer</figcaption>
+        </figure>
 
-     <section id="analisis-Hyer" class="site-analysis">
-  <h2>Hyer — Análisis</h2>
+        <article class="analisis" aria-labelledby="h-hyer-analisis">
+          <h3 id="h-hyer-analisis">Hyer — Análisis</h3>
 
-  <!-- ANÁLISIS -->
-  <article class="analisis">
-    <h3>1. Selección: ¿Por qué elegí este sitio premiado?</h3>
-    <p>
-      Elegí FlyHyer porque combina una identidad de marca cuidada con una
-      plataforma de reserva orientada a servicios de aviación personalizados.
-      El proyecto aparece en portfolios y estudios de agencia como ejemplo de
-      diseño y estrategia de producto digital, lo que lo convierte en un buen
-      caso para analizar cómo se transmite lujo y servicio a través del UI/UX.
-    </p>
+          <h4>1. Selección</h4>
+          <p>
+            Combinación de identidad de marca y plataforma orientada a servicios
+            de aviación.
+          </p>
 
-    <h3>2. Impresión inicial: ¿Qué sensaciones produce?</h3>
-    <p>
-      La primera impresión es de elegancia y profesionalidad: el sitio transmite
-      sensaciones de exclusividad, control y servicio premium. El diseño comunica
-      calma y claridad, con fotografías limpias y una jerarquía visual que apunta
-      al servicio personalizado por encima del precio o la oferta masiva.
-    </p>
+          <h4>2. Impresión inicial</h4>
+          <p>
+            Elegancia y sensación premium: imágenes limpias y jerarquía clara.
+          </p>
 
-    <h3>3. Estructura: ¿Cómo está organizada la información?</h3>
-    <p>
-      La estructura sigue el patrón de producto/servicio: hero con propuesta de
-      valor, secciones que explican soluciones (charter, vuelos compartidos,
-      membresías), páginas de producto/booking y contenidos corporativos (about,
-      insights). El flujo se orienta a guiar al usuario hacia la reserva o el
-      contacto con soporte especializado.
-    </p>
+          <h4>3. Estructura</h4>
+          <p>
+            Hero con propuesta de valor, secciones de servicios y flujo hacia la
+            reserva.
+          </p>
 
-    <h3>4. Visual: Paleta, tipografía, branding</h3>
-    <p>
-      La paleta es sobria y elegante (tonos neutros y acentos que refuerzan lujo
-      y confianza). La tipografía es una sans moderna y legible, con uso claro de
-      tamaños y pesos para jerarquizar mensajes. El branding apuesta por imágenes
-      de alta calidad y una estética minimalista que refuerza la experiencia
-      premium.
-    </p>
+          <h4>4. Visual</h4>
+          <p>
+            Paleta sobria y tipografía sans moderna; branding orientado al lujo.
+          </p>
 
-    <h3>5. Interacción: Animaciones, efectos, microinteracciones</h3>
-    <p>
-      El sitio utiliza transiciones suaves, microinteracciones en botones y
-      formularios, y efectos de desplazamiento controlados que aportan una sensación
-      pulida sin distraer. Las animaciones están al servicio de la claridad: no
-      compiten con el contenido, sino que guían la atención del usuario.
-    </p>
+          <h4>5. Interacción</h4>
+          <p>
+            Transiciones y microinteracciones que aportan pulido sin distraer.
+          </p>
 
-    <h3>6. Usabilidad: Claridad, accesibilidad, carga</h3>
-    <p>
-      En términos de claridad la web es buena: CTA visibles, rutas de conversión
-      definidas y contenido bien segmentado. Respecto a accesibilidad, el sitio
-      utiliza prácticas modernas (estructura limpia, textos contrastados), pero
-      al ser un producto centrado en interacción avanzada y reservas, conviene
-      verificar soporte para teclado, etiquetas ARIA y alternativas para imágenes.
-      La carga se percibe optimizada en escritorio; en móvil puede depender de la
-      conexión, por lo que es importante lazy-loading y optimización de assets.
-    </p>
+          <h4>6. Usabilidad</h4>
+          <p>
+            CTA visibles y rutas de conversión claras; revisar accesibilidad y
+            soporte de teclado.
+          </p>
 
-    <h3>7. Técnico: Velocidad, semántica, Core Web Vitals</h3>
-    <p>
-      Técnicamente FlyHyer muestra una implementación basada en buenas prácticas
-      (optimización de assets, uso de frameworks modernos). Aun así, por la
-      naturaleza visual y funcional (imágenes de alta resolución, reservas en
-      tiempo real), es clave auditar Core Web Vitals: LCP y TTFB pueden verse
-      afectados sin una correcta entrega de recursos en CDN y lazy-loading.
-    </p>
+          <h4>7. Técnico</h4>
+          <p>
+            Optimización de assets importante para LCP y TTFB en conexiones
+            lentas.
+          </p>
 
-    <h3>8. Criterios de excelencia: Creatividad, contenido, UX</h3>
-    <p>
-      La creatividad aquí está en la forma de presentar un servicio complejo de
-      manera simple y aspiracional. El contenido está alineado con la promesa de
-      marca (personalización y experiencia) y la UX prioriza rapidez de
-      conversión y confianza (testimonios, datos claros, proceso de reserva
-      transparente).
-    </p>
+          <h4>8. Criterios de excelencia</h4>
+          <p>Presenta funcionalidad compleja de forma simple y aspiracional.</p>
 
-    <h3>9. Conclusión: Puntos fuertes, debilidades y aprendizajes</h3>
-    <ul>
-      <li><strong>Puntos fuertes:</strong> branding coherente, UX enfocada a la conversión, experiencia premium.</li>
-      <li><strong>Debilidades:</strong> posible carga alta en conexiones lentas; accesibilidad a revisar en profundidad.</li>
-      <li><strong>Aprendizajes:</strong> para servicios de lujo, la simplicidad y la confianza pesan más que la exuberancia visual; el rendimiento técnico y la accesibilidad deben acompañar siempre la estética.</li>
-    </ul>
-  </article>
-</section>
+          <h4>9. Conclusión</h4>
+          <ul>
+            <li>
+              <strong>Puntos fuertes:</strong> branding coherente y UX enfocada
+              a conversión.
+            </li>
+            <li>
+              <strong>Debilidades:</strong> posible carga en conexiones lentas.
+            </li>
+            <li>
+              <strong>Aprendizajes:</strong> rendimiento y accesibilidad deben
+              acompañar la estética.
+            </li>
+          </ul>
+        </article>
+      </section>
 
+      <!-- SECCIÓN 3 -->
+      <section id="Buttermax" aria-labelledby="h-Buttermax">
+        <h2 id="h-Buttermax">3. Buttermax</h2>
 
-      <!-- ===================================================== -->
-      <!-- 🔵 SECCIÓN 3: ANÁLISIS DEL SITIO 3 -->
-      <!-- ===================================================== -->
-      <section id="Buttermax">
-        <h2>3. Buttermax</h2>
+        <figure>
+          <iframe
+            src="https://buttermax.net"
+            title="Vista previa: Buttermax"
+            aria-label="Vista previa del sitio Buttermax"
+            width="100%"
+            height="400"
+            loading="lazy"
+          ></iframe>
+          <figcaption>Preview del sitio — Buttermax</figcaption>
+        </figure>
 
-        <iframe
-          src="https://buttermax.net"
-          title="Buttermax"
-          aria-label="Vista previa del sitio 3"
-          width="100%"
-          height="400"
-          loading="lazy"
-        ></iframe>
+        <article class="analisis" aria-labelledby="h-butter-analisis">
+          <h3 id="h-butter-analisis">Análisis</h3>
 
-        <article class="analisis">
-          <h3>Análisis visual y de usabilidad</h3>
-        <article class="analisis">
-    <h3>1. Selección: ¿Por qué elegí este sitio premiado?</h3>
-    <p>
-      Elegí Buttermax por su enfoque innovador en la presentación de productos
-      industriales mediante una experiencia digital inmersiva. Destaca por
-      transformar un sector técnico en una narrativa visual atractiva, lo que
-      le ha valido reconocimientos en plataformas de diseño.
-    </p>
+          <h4>1. Selección</h4>
+          <p>
+            Enfoque innovador en presentación de productos industriales con
+            narrativa visual.
+          </p>
 
-    <h3>2. Impresión inicial: ¿Qué sensaciones produce?</h3>
-    <p>
-      La página transmite modernidad y sofisticación. La tipografía audaz y la
-      paleta de colores contrastantes crean una atmósfera profesional y energética,
-      invitando al usuario a explorar más.
-    </p>
+          <h4>2. Impresión inicial</h4>
+          <p>
+            Modernidad y sofisticación; tipografía audaz y paleta contrastante.
+          </p>
 
-    <h3>3. Estructura: ¿Cómo está organizada la información?</h3>
-    <p>
-      La información se presenta de manera clara y jerárquica. La navegación es
-      sencilla, con secciones bien definidas: proyectos destacados, servicios y
-      contacto. Cada sección fluye naturalmente hacia la siguiente.
-    </p>
+          <h4>3. Estructura</h4>
+          <p>Secciones bien definidas y flujo natural entre contenidos.</p>
 
-    <h3>4. Visual: Paleta, tipografía, branding</h3>
-    <p>
-      La paleta se centra en tonos amarillos y negros, creando contraste y
-      fuerza visual. La tipografía moderna y de gran tamaño refuerza la identidad
-      de marca. Imágenes de alta calidad y gráficos 3D aportan dinamismo y
-      profundidad.
-    </p>
+          <h4>4. Visual</h4>
+          <p>
+            Tonos amarillos y negros; imágenes y gráficos 3D aportan dinamismo.
+          </p>
 
-    <h3>5. Interacción: Animaciones, efectos, microinteracciones</h3>
-    <p>
-      La web incluye animaciones sutiles y efectos de desplazamiento que mejoran
-      la interacción. Las microinteracciones, como cambios de color en botones al
-      pasar el cursor, proporcionan retroalimentación inmediata y mejoran la
-      usabilidad.
-    </p>
+          <h4>5. Interacción</h4>
+          <p>Animaciones y microinteracciones que mejoran la experiencia.</p>
 
-    <h3>6. Usabilidad: Claridad, accesibilidad, carga</h3>
-    <p>
-      La estructura es intuitiva, la tipografía legible y los contrastes adecuados,
-      facilitando la lectura. Sin embargo, la riqueza visual puede afectar la
-      velocidad de carga en conexiones lentas, impactando la experiencia.
-    </p>
+          <h4>6. Usabilidad</h4>
+          <p>Buena legibilidad; optimizar recursos para conexiones lentas.</p>
 
-    <h3>7. Técnico: Velocidad, semántica, Core Web Vitals</h3>
-    <p>
-      La web es responsive y se adapta bien a distintos dispositivos. La
-      complejidad de elementos gráficos y animaciones puede influir en métricas
-      como LCP y FID, por lo que se recomienda optimización adicional para
-      mejorar rendimiento.
-    </p>
+          <h4>7. Técnico</h4>
+          <p>
+            Recomendada auditoría de Core Web Vitals por elementos gráficos
+            complejos.
+          </p>
 
-    <h3>8. Criterios de excelencia: Creatividad, contenido, UX</h3>
-    <p>
-      La creatividad se aprecia en cómo presenta información técnica de forma
-      atractiva. El contenido es relevante y bien estructurado. La UX es positiva,
-      con navegación intuitiva y diseño coherente que facilita la interacción.
-    </p>
+          <h4>8. Criterios de excelencia</h4>
+          <p>Contenido relevante y UX positiva.</p>
 
-    <h3>9. Conclusión: Puntos fuertes, debilidades y aprendizajes</h3>
-    <ul>
-      <li><strong>Puntos fuertes:</strong> Diseño impactante, UX fluida, animaciones efectivas.</li>
-      <li><strong>Debilidades:</strong> Posible carga alta de recursos; optimización de Core Web Vitals recomendable.</li>
-      <li><strong>Aprendizajes:</strong> Equilibrar creatividad y optimización técnica garantiza mejor experiencia de usuario.</li>
-    </ul>
-  </article>
-</section>
+          <h4>9. Conclusión</h4>
+          <ul>
+            <li>
+              <strong>Puntos fuertes:</strong> diseño impactante y animaciones
+              efectivas.
+            </li>
+            <li><strong>Debilidades:</strong> carga alta de recursos.</li>
+            <li>
+              <strong>Aprendizajes:</strong> equilibrio entre creatividad y
+              optimización.
+            </li>
+          </ul>
+        </article>
+      </section>
 
-      <!-- ===================================================== -->
-      <!-- 🟠 SECCIÓN 4: ANÁLISIS DEL SITIO 4 -->
-      <!-- ===================================================== -->
-      <section id="Gufram">
-        <h2>4. [Gufram]</h2>
+      <!-- SECCIÓN 4 -->
+      <section id="Gufram" aria-labelledby="h-Gufram">
+        <h2 id="h-Gufram">4. Gufram</h2>
 
-        <iframe
-          src="https://gufram.it"
-          title="Gufram"
-          aria-label="Vista previa del sitio 4"
-          width="100%"
-          height="400"
-          loading="lazy"
-        ></iframe>
+        <figure>
+          <iframe
+            src="https://gufram.it"
+            title="Vista previa: Gufram"
+            aria-label="Vista previa del sitio Gufram"
+            width="100%"
+            height="400"
+            loading="lazy"
+          ></iframe>
+          <figcaption>Preview del sitio — Gufram</figcaption>
+        </figure>
 
-        <article class="analisis">
-          <h3>Análisis visual y de usabilidad</h3>
-    <article class="analisis">
-    <h3>1. Selección: ¿Por qué elegí este sitio premiado?</h3>
-    <p>
-      Elegí Gufram por su enfoque único en la combinación de diseño radical y
-      funcionalidad. La marca italiana ha sido reconocida por fusionar arte y
-      diseño de manera innovadora, obteniendo premios como "Site of the Day".
-    </p>
+        <article class="analisis" aria-labelledby="h-gufram-analisis">
+          <h3 id="h-gufram-analisis">Análisis</h3>
 
-    <h3>2. Impresión inicial: ¿Qué sensaciones produce?</h3>
-    <p>
-      La página transmite creatividad y audacia. La interfaz limpia y moderna,
-      con un uso innovador de imágenes y tipografía, invita al usuario a
-      explorar.
-    </p>
+          <h4>1. Selección</h4>
+          <p>
+            Marca que fusiona arte y diseño con una presencia web reconocida por
+            su creatividad.
+          </p>
 
-    <h3>3. Estructura: ¿Cómo está organizada la información?</h3>
-    <p>
-      La información se presenta de forma clara y accesible. El menú principal
-      ofrece secciones como "Productos", "Historia", "Autores", "Exposiciones",
-      "Noticias" y "Contacto". El desplazamiento suave mejora la experiencia.
-    </p>
+          <h4>2. Impresión inicial</h4>
+          <p>Creatividad, audacia y exploración visual.</p>
 
-    <h3>4. Visual: Paleta, tipografía, branding</h3>
-    <p>
-      La paleta de colores combina tonos neutros con acentos vibrantes,
-      reflejando la identidad de la marca. La tipografía moderna y legible
-      complementa el diseño minimalista y coherente con el branding de Gufram.
-    </p>
+          <h4>3. Estructura</h4>
+          <p>
+            Menú con secciones de producto, historia y contacto; desplazamiento
+            suave.
+          </p>
 
-    <h3>5. Interacción: Animaciones, efectos, microinteracciones</h3>
-    <p>
-      La web incluye animaciones sutiles y efectos de desplazamiento. Las
-      microinteracciones, como cambios de color en botones al pasar el cursor,
-      proporcionan retroalimentación inmediata y mejoran la usabilidad.
-    </p>
+          <h4>4. Visual</h4>
+          <p>Paleta neutra con acentos vibrantes; tipografía moderna.</p>
 
-    <h3>6. Usabilidad: Claridad, accesibilidad, carga</h3>
-    <p>
-      La navegación es intuitiva, la tipografía legible y los contrastes adecuados
-      facilitan la lectura. Es responsive y se adapta bien a distintos dispositivos,
-      aunque los elementos gráficos pueden afectar la velocidad de carga.
-    </p>
+          <h4>5. Interacción</h4>
+          <p>
+            Animaciones sutiles y microinteracciones que mejoran la exploración.
+          </p>
 
-    <h3>7. Técnico: Velocidad, semántica, Core Web Vitals</h3>
-    <p>
-      La web es responsive y se adapta a diferentes dispositivos. Las animaciones
-      y elementos gráficos avanzados pueden influir en métricas como LCP y FID,
-      por lo que se recomienda optimización adicional para mejorar el rendimiento.
-    </p>
+          <h4>6. Usabilidad</h4>
+          <p>
+            Buena adaptabilidad; optimizar recursos gráficos para mejorar
+            rendimiento.
+          </p>
 
-    <h3>8. Criterios de excelencia: Creatividad, contenido, UX</h3>
-    <p>
-      La creatividad se refleja en la presentación artística de los productos.
-      El contenido está bien estructurado y la UX es fluida, coherente e
-      intuitiva.
-    </p>
+          <h4>7. Técnico</h4>
+          <p>
+            Recomendable auditoría técnica para LCP y FID cuando emplea
+            elementos avanzados.
+          </p>
 
-    <h3>9. Conclusión: Puntos fuertes, debilidades y aprendizajes</h3>
-    <ul>
-      <li><strong>Puntos fuertes:</strong> Diseño impactante, experiencia fluida, animaciones efectivas.</li>
-      <li><strong>Debilidades:</strong> Posible carga alta de recursos; Core Web Vitals a optimizar.</li>
-      <li><strong>Aprendizajes:</strong> Equilibrar creatividad y optimización técnica garantiza mejor experiencia de usuario.</li>
-    </ul>
-  </article>
-</section>
+          <h4>8. Criterios de excelencia</h4>
+          <p>Creatividad aplicada al producto y experiencia coherente.</p>
+
+          <h4>9. Conclusión</h4>
+          <ul>
+            <li>
+              <strong>Puntos fuertes:</strong> diseño impactante y experiencia
+              fluida.
+            </li>
+            <li>
+              <strong>Debilidades:</strong> optimización técnica a revisar.
+            </li>
+            <li>
+              <strong>Aprendizajes:</strong> combinar creatividad con
+              performance.
+            </li>
+          </ul>
+        </article>
+      </section>
     </main>
 
-    <footer>
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
         <p>© 2025 Isaac Piña Portillo — WEB ATELIER (UDIT)</p>
       </div>
