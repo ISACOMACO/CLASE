@@ -30,28 +30,105 @@
   <body>
     <a class="skip-link sr-only" href="#main">Saltar al contenido principal</a>
 
-    <header class="site-header" role="banner">
+    <!-- HEADER -->
+    <header
+      class="site-header"
+      role="banner"
+      style="
+        text-align: center;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #fff;
+        height: 100vh; /* Ocupa toda la pantalla */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
       <div class="container">
         <div>
-          <h1 class="site-title">Análisis de 4 sitios web</h1>
-          <p>Proyecto de estudiante — WEB ATELIER (UDIT)</p>
+          <h1
+            class="site-title"
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-size: 5.5rem; /* Aumentado */
+              font-weight: 800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              color: #ffffff;
+              text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+              margin-bottom: 1rem;
+            "
+          >
+            Análisis de 4 sitios web
+          </h1>
+          <p
+            style="
+              font-family: 'Comfortaa', sans-serif;
+              font-size: 1.4rem;
+              font-weight: 500;
+              color: #eee;
+            "
+          >
+            Proyecto de estudiante — WEB ATELIER (UDIT)
+          </p>
         </div>
 
         <nav class="main-nav" aria-label="Navegación principal">
-          <ul>
-            <li><a href="#sitio-1">1917</a></li>
-            <li><a href="#Hyer">Hyer</a></li>
-            <li><a href="#Buttermax">Buttermax</a></li>
-            <li><a href="#Gufram">Gufram</a></li>
+          <ul
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 1.5rem;
+              list-style: none;
+              padding: 0;
+              margin-top: 2rem;
+            "
+          >
+            <li>
+              <a href="#sitio-1" style="color: #ffcc33; text-decoration: none"
+                >1917</a
+              >
+            </li>
+            <li>
+              <a href="#Hyer" style="color: #ffcc33; text-decoration: none"
+                >Hyer</a
+              >
+            </li>
+            <li>
+              <a href="#Buttermax" style="color: #ffcc33; text-decoration: none"
+                >Buttermax</a
+              >
+            </li>
+            <li>
+              <a href="#Gufram" style="color: #ffcc33; text-decoration: none"
+                >Gufram</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
+    <!-- MAIN -->
     <main id="main" class="container" role="main">
       <!-- SECCIÓN 1 -->
       <section id="sitio-1" aria-labelledby="h-sitio-1">
-        <h2 id="h-sitio-1">1. 1917: Into the Trenches</h2>
+        <h2
+          id="h-sitio-1"
+          style="
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff6600;
+          "
+        >
+          1. 1917: Into the Trenches
+        </h2>
 
         <figure>
           <iframe
@@ -67,7 +144,6 @@
 
         <article class="analisis" aria-labelledby="sitio1-resumen">
           <h3 id="sitio1-resumen">Análisis visual y de usabilidad</h3>
-
           <h4>1. Selección: ¿Por qué elegí este sitio premiado?</h4>
           <p>
             Este sitio fue reconocido como <em>Site of the Day</em> por Awwwards
@@ -75,46 +151,38 @@
             3D que permite al usuario adentrarse en las trincheras de la
             película <strong>1917</strong>.
           </p>
-
           <h4>2. Impresión inicial: ¿Qué sensaciones produce?</h4>
           <p>
             Transmite tensión, oscuridad y realismo. La atmósfera inmersiva y la
             ambientación bélica hacen sentir al usuario dentro de la película.
           </p>
-
           <h4>3. Estructura</h4>
           <p>
             Navegación basada en un entorno 3D/interactivo: exploración por mapa
             y accesos a making-of, entrevistas y experiencias AR/VR.
           </p>
-
           <h4>4. Visual</h4>
           <p>
             Paleta oscura, tipografía robusta y coherencia visual con la
             estética de la película.
           </p>
-
           <h4>5. Interacción</h4>
           <p>
             WebGL, animaciones y microinteracciones que generan sensación de
             profundidad.
           </p>
-
           <h4>6. Usabilidad</h4>
           <p>
             Experiencia inmersiva pero con accesibilidad limitada y requisitos
             de recursos elevados.
           </p>
-
           <h4>7. Técnico</h4>
           <p>
             Uso intensivo de canvas/WebGL que puede afectar SEO y rendimiento si
             no se optimiza.
           </p>
-
           <h4>8. Criterios de excelencia</h4>
           <p>Creatividad alta, contenido coherente y experiencia memorable.</p>
-
           <h4>9. Conclusión</h4>
           <ul>
             <li><strong>Puntos fuertes:</strong> inmersión y narrativa.</li>
@@ -131,7 +199,20 @@
 
       <!-- SECCIÓN 2 -->
       <section id="Hyer" aria-labelledby="h-Hyer">
-        <h2 id="h-Hyer">2. Hyer</h2>
+        <h2
+          id="h-Hyer"
+          style="
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff6600;
+          "
+        >
+          2. Hyer
+        </h2>
 
         <figure>
           <iframe
@@ -147,49 +228,40 @@
 
         <article class="analisis" aria-labelledby="h-hyer-analisis">
           <h3 id="h-hyer-analisis">Hyer — Análisis</h3>
-
           <h4>1. Selección</h4>
           <p>
             Combinación de identidad de marca y plataforma orientada a servicios
             de aviación.
           </p>
-
           <h4>2. Impresión inicial</h4>
           <p>
             Elegancia y sensación premium: imágenes limpias y jerarquía clara.
           </p>
-
           <h4>3. Estructura</h4>
           <p>
             Hero con propuesta de valor, secciones de servicios y flujo hacia la
             reserva.
           </p>
-
           <h4>4. Visual</h4>
           <p>
             Paleta sobria y tipografía sans moderna; branding orientado al lujo.
           </p>
-
           <h4>5. Interacción</h4>
           <p>
             Transiciones y microinteracciones que aportan pulido sin distraer.
           </p>
-
           <h4>6. Usabilidad</h4>
           <p>
             CTA visibles y rutas de conversión claras; revisar accesibilidad y
             soporte de teclado.
           </p>
-
           <h4>7. Técnico</h4>
           <p>
             Optimización de assets importante para LCP y TTFB en conexiones
             lentas.
           </p>
-
           <h4>8. Criterios de excelencia</h4>
           <p>Presenta funcionalidad compleja de forma simple y aspiracional.</p>
-
           <h4>9. Conclusión</h4>
           <ul>
             <li>
@@ -209,7 +281,20 @@
 
       <!-- SECCIÓN 3 -->
       <section id="Buttermax" aria-labelledby="h-Buttermax">
-        <h2 id="h-Buttermax">3. Buttermax</h2>
+        <h2
+          id="h-Buttermax"
+          style="
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff6600;
+          "
+        >
+          3. Buttermax
+        </h2>
 
         <figure>
           <iframe
@@ -225,41 +310,32 @@
 
         <article class="analisis" aria-labelledby="h-butter-analisis">
           <h3 id="h-butter-analisis">Análisis</h3>
-
           <h4>1. Selección</h4>
           <p>
             Enfoque innovador en presentación de productos industriales con
             narrativa visual.
           </p>
-
           <h4>2. Impresión inicial</h4>
           <p>
             Modernidad y sofisticación; tipografía audaz y paleta contrastante.
           </p>
-
           <h4>3. Estructura</h4>
           <p>Secciones bien definidas y flujo natural entre contenidos.</p>
-
           <h4>4. Visual</h4>
           <p>
             Tonos amarillos y negros; imágenes y gráficos 3D aportan dinamismo.
           </p>
-
           <h4>5. Interacción</h4>
           <p>Animaciones y microinteracciones que mejoran la experiencia.</p>
-
           <h4>6. Usabilidad</h4>
           <p>Buena legibilidad; optimizar recursos para conexiones lentas.</p>
-
           <h4>7. Técnico</h4>
           <p>
             Recomendada auditoría de Core Web Vitals por elementos gráficos
             complejos.
           </p>
-
           <h4>8. Criterios de excelencia</h4>
           <p>Contenido relevante y UX positiva.</p>
-
           <h4>9. Conclusión</h4>
           <ul>
             <li>
@@ -277,7 +353,20 @@
 
       <!-- SECCIÓN 4 -->
       <section id="Gufram" aria-labelledby="h-Gufram">
-        <h2 id="h-Gufram">4. Gufram</h2>
+        <h2
+          id="h-Gufram"
+          style="
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff6600;
+          "
+        >
+          4. Gufram
+        </h2>
 
         <figure>
           <iframe
@@ -293,45 +382,36 @@
 
         <article class="analisis" aria-labelledby="h-gufram-analisis">
           <h3 id="h-gufram-analisis">Análisis</h3>
-
           <h4>1. Selección</h4>
           <p>
             Marca que fusiona arte y diseño con una presencia web reconocida por
             su creatividad.
           </p>
-
           <h4>2. Impresión inicial</h4>
           <p>Creatividad, audacia y exploración visual.</p>
-
           <h4>3. Estructura</h4>
           <p>
             Menú con secciones de producto, historia y contacto; desplazamiento
             suave.
           </p>
-
           <h4>4. Visual</h4>
           <p>Paleta neutra con acentos vibrantes; tipografía moderna.</p>
-
           <h4>5. Interacción</h4>
           <p>
             Animaciones sutiles y microinteracciones que mejoran la exploración.
           </p>
-
           <h4>6. Usabilidad</h4>
           <p>
             Buena adaptabilidad; optimizar recursos gráficos para mejorar
             rendimiento.
           </p>
-
           <h4>7. Técnico</h4>
           <p>
             Recomendable auditoría técnica para LCP y FID cuando emplea
             elementos avanzados.
           </p>
-
           <h4>8. Criterios de excelencia</h4>
           <p>Creatividad aplicada al producto y experiencia coherente.</p>
-
           <h4>9. Conclusión</h4>
           <ul>
             <li>
@@ -350,7 +430,17 @@
       </section>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
+    <!-- FOOTER -->
+    <footer
+      class="site-footer"
+      role="contentinfo"
+      style="
+        background: #222;
+        color: #fff;
+        padding: 2rem 1rem;
+        text-align: center;
+      "
+    >
       <div class="container">
         <p>© 2025 Isaac Piña Portillo — WEB ATELIER (UDIT)</p>
       </div>
