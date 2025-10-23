@@ -1,19 +1,11 @@
-@import url("http://meyerweb.com/eric/tools/css/reset/reset.css"); /* CSS Reset para compatibilidad entre navegadores */
+@import url("http://meyerweb.com/eric/tools/css/reset/reset.css"); /* CSS Reset */
 @import url("style.css"); /* Estilos principales */
 
-/* ===== PORTAFOLIO RESPONSIVE BÁSICO (MOBILE-FIRST) ===== */
-/*
- * ESTRATEGIA MOBILE-FIRST:
- * 1. Estilos base ahora son móviles (pantallas pequeñas)
- * 2. Media queries usan min-width en lugar de max-width
- * 3. Progressive enhancement - agregamos estilos para pantallas más grandes
- */
-
-/* Variables CSS básicas para Ejercicio 1 */
+/* ===== VARIABLES ===== */
 :root {
   --primary-color: #2563eb;
   --secondary-color: #64748b;
-  --accent-color: #f59e0b;
+  --accent-color: #ff6600; /* cambiar a mismo naranja de títulos */
   --white: #ffffff;
   --border-color: #e2e8f0;
   --spacing-sm: 1rem;
@@ -28,98 +20,116 @@
 body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
-  background-color: #0b1d3f; /* Fondo azul elegante */
-  color: #ffffff; /* Texto principal en blanco para contraste */
+  background-color: #0b1d3f; /* Azul oscuro */
+  color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* ===== CONTAINER BÁSICO ===== */
+/* ===== PARTICLES CANVAS ===== */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* altura del viewport */
+  z-index: 0; /* detrás de todo */
+  pointer-events: none;
+}
+
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-sm);
+  position: relative;
+  z-index: 1; /* por encima del canvas */
 }
 
-/* ===== HEADER RESPONSIVO ===== */
+/* ===== HEADER ===== */
 .site-header {
-  background: #0b1d3f; /* Cambiado a azul oscuro */
-  color: #ffffff; /* Texto en blanco para contraste */
+  background: #0b1d3f; /* Azul oscuro */
+  color: #ffffff;
   padding: var(--spacing-md) 0;
-}
-
-.site-header .container {
+  position: relative;
+  z-index: 1;
+  min-height: 110vh;
   display: flex;
-  flex-direction: column; /* Móvil: navegación vertical */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
 .site-title {
-  font-size: 1.25rem; /* Móvil: título más pequeño */
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
 }
 
+.header-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+/* ===== NAV ===== */
 .main-nav ul {
   display: flex;
-  flex-direction: column; /* Móvil: enlaces apilados verticalmente */
+  flex-direction: row;
+  gap: 2rem;
   list-style: none;
-  gap: var(--spacing-sm);
+  padding: 0;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
 .main-nav a {
-  color: white;
+  color: var(--accent-color); /* mismo naranja que títulos de secciones */
+  background-color: transparent; /* quitar fondo */
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  transition: background-color 0.2s;
+  padding: 0; /* quitar padding extra */
+  border-radius: 0; /* sin bordes redondeados */
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 .main-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff9933; /* naranja un poco más claro al hover */
+  background-color: transparent;
 }
 
 /* ===== SECCIONES ===== */
-.hero-section {
+.hero-section,
+.projects-section,
+.about-section,
+.contact-section {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  padding: var(--spacing-lg) 0; /* Móvil: padding reducido */
-  background: linear-gradient(135deg, #0b1d3f 0%, #1e3a8a 100%);
-  color: #ffffff;
-  margin: var(--spacing-lg) 0;
-  border-radius: var(--border-radius);
+  padding: var(--spacing-lg) 0;
 }
 
-.hero-section h2,
-.projects-section h2,
-.about-section h2,
-.contact-section h2 {
-  font-size: 2.5rem; /* Títulos más grandes */
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
-  color: #ffffff; /* Asegura buena legibilidad sobre azul oscuro */
-}
-
-.hero-section p {
-  font-size: 1.125rem;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0.9;
-  color: #cbd5e1; /* Gris claro para buena legibilidad sobre azul oscuro */
-}
-
-.projects-section {
-  margin: var(--spacing-xl) 0;
-}
-
-/* ===== GRID DE PROYECTOS CON FLEXBOX ===== */
 .projects-grid {
   display: flex;
-  flex-direction: column; /* Móvil: una sola columna */
+  flex-direction: column;
   gap: var(--spacing-lg);
   align-items: center;
 }
 
+/* ===== PROYECTOS ===== */
 .project-card {
-  width: 100%; /* Móvil: ancho completo */
+  width: 100%;
   max-width: 100%;
-  background: #243754; /* Color elegante para las tarjetas */
+  background: #243754;
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -143,146 +153,78 @@ body {
 .project-info h3 {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-sm);
-  color: #ffffff; /* Texto principal de la tarjeta en blanco */
+  color: #ffffff;
 }
 
 .project-info p {
-  color: #cbd5e1; /* Texto secundario en gris claro para legibilidad */
+  color: #cbd5e1;
   margin-bottom: var(--spacing-md);
   font-size: 0.875rem;
 }
 
-/* ===== TAGS ===== */
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tag {
-  background: #2563eb; /* Azul brillante para contraste con azul oscuro */
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
 /* ===== BOTÓN CTA ===== */
 .cta-button {
-  background: #f59e0b; /* Naranja para contraste */
+  background: #f59e0b;
   color: #0b1d3f;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: var(--border-radius);
   font-weight: 600;
   transition: background-color 0.2s;
-  display: inline-block;
 }
 
 .cta-button:hover {
   background: #d97706;
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* ===== ANÁLISIS EN COLUMNAS ===== */
+main article.analisis {
+  column-count: 2;
+  column-gap: 2rem;
+}
 
-/* Tablet: 2-3 columnas - 481px+ */
-@media (min-width: 481px) {
-  .site-title {
-    font-size: 1.5rem;
-  }
+main article.analisis h3,
+main article.analisis p,
+main article.analisis ul {
+  break-inside: avoid;
+}
 
-  .projects-grid {
-    flex-direction: row; /* Tablet: múltiples columnas */
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .project-card {
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-  }
-
-  .hero-section h2 {
-    font-size: 2.75rem; /* Ajuste un poco mayor en tablet */
-  }
-
-  .projects-section h2 {
-    font-size: 2.75rem;
+@media (max-width: 768px) {
+  main article.analisis {
+    column-count: 1;
   }
 }
 
-/* Desktop: Layout horizontal completo - 769px+ */
-@media (min-width: 769px) {
-  .site-header .container {
-    flex-direction: row; /* Desktop: navegación horizontal */
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-
-  .main-nav ul {
-    flex-direction: row; /* Desktop: enlaces en línea */
-    gap: var(--spacing-md);
-  }
-
-  .site-title {
-    font-size: 1.5rem;
-  }
-
-  .project-card {
-    min-width: 300px;
-    max-width: 400px; /* Desktop: tarjetas más anchas */
-  }
-
-  .hero-section {
-    padding: var(--spacing-xl) 0; /* Desktop: más espacio */
-  }
-
-  .hero-section h2 {
-    font-size: 3rem; /* Títulos más grandes en desktop */
-  }
-
-  .hero-section p {
-    font-size: 1.125rem;
-  }
-}
-
-/* ===== TIPOGRAFÍA BÁSICA ===== */
+/* ===== TIPOGRAFÍA ===== */
 h1,
 h2,
 h3 {
   font-weight: 600;
   line-height: 1.2;
 }
-
 h1 {
   font-size: 1.5rem;
 }
-
 h2 {
   font-size: 1.75rem;
 }
-
 h3 {
   font-size: 1.125rem;
 }
-
 p {
   margin-bottom: var(--spacing-sm);
 }
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background: #64748b; /* Gris azulado para contraste elegante */
+  background: #64748b;
   color: white;
   text-align: center;
   padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xl);
 }
 
-/* ===== RESPONSIVE IMAGES ===== */
+/* ===== IMÁGENES RESPONSIVE ===== */
 img {
   max-width: 100%;
   height: auto;
@@ -299,22 +241,4 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-/* ===== ANÁLISIS EN DOS COLUMNAS PARA TODOS LOS SITIOS ===== */
-main article.analisis {
-  column-count: 2; /* Divide el contenido en 2 columnas */
-  column-gap: 2rem; /* Espacio entre columnas */
-}
-
-main article.analisis h3,
-main article.analisis p,
-main article.analisis ul {
-  break-inside: avoid; /* Evita que títulos, párrafos o listas se rompan entre columnas */
-}
-
-/* ===== RESPONSIVE: 1 columna en pantallas pequeñas ===== */
-@media (max-width: 768px) {
-  main article.analisis {
-    column-count: 1;
-  }
 }
