@@ -1,613 +1,114 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Análisis comparativo de cuatro sitios web — Proyecto WEB ATELIER (UDIT)"
+      content="Aprende HTML y desarrollo web con las mejores prácticas."
     />
     <meta
       name="keywords"
-      content="análisis web, diseño web, usabilidad, accesibilidad"
+      content="HTML, CSS, desarrollo web, SEO, accesibilidad"
     />
-    <meta name="author" content="Isaac Piña Portillo" />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Análisis de Webs — WEB ATELIER (UDIT)</title>
+    <meta name="author" content="Tu Nombre" />
+    <meta name="robots" content="noindex" />
 
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>WebApp Design UDIT</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+
+    <!--Sólo cargo el barrel file-->
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+      rel="icon"
+      type="image/png"
+      href="./assets/icons/favicon-96x96.png"
+      sizes="96x96"
     />
-
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <style>
-      @keyframes neonFade {
-        0% {
-          opacity: 0.6;
-          text-shadow: 0 0 1px #fff, 0 0 2px #ffcc33, 0 0 3px #ff6600;
-        }
-        50% {
-          opacity: 1;
-          text-shadow: 0 0 3px #fff, 0 0 6px #ffcc33, 0 0 9px #ff6600;
-        }
-        100% {
-          opacity: 0.6;
-          text-shadow: 0 0 1px #fff, 0 0 2px #ffcc33, 0 0 3px #ff6600;
-        }
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow-x: hidden;
-        background: #1e3a8a; /* Fondo uniforme */
-        font-family: "Montserrat", sans-serif;
-      }
-
-      canvas#particles-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1; /* Por debajo del contenido */
-      }
-
-      header,
-      main,
-      footer {
-        position: relative;
-        z-index: 2; /* Por encima del canvas */
-      }
-
-      .site-header {
-        padding: 1rem 1rem 3rem 1rem; /* padding-top reducido */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* contenido desde arriba */
-        text-align: center;
-        color: #fff;
-        gap: 1.5rem;
-        min-height: 110vh;
-      }
-
-      .site-title {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 7rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        line-height: 1.2;
-        margin: 0; /* quitar margen inferior para subir */
-        white-space: nowrap;
-        text-shadow: 0 0 2px #fff, 0 0 4px #ffcc33, 0 0 6px #ff6600;
-        animation: neonFade 6s ease-in-out infinite alternate;
-      }
-
-      .site-header p {
-        color: #ffcc99;
-        font-size: 2rem;
-        font-weight: 500;
-        margin: 0; /* quitar margen inferior para subir */
-      }
-
-      .main-nav ul {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0 0 0; /* algo de espacio desde subtítulo */
-        flex-wrap: wrap;
-      }
-
-      .main-nav a {
-        color: #ff6600; /* Solo color naranja */
-        text-decoration: none; /* Quitar rectángulos/estilo de botón */
-        font-size: 1.8rem;
-        font-weight: 600;
-        transition: color 0.3s;
-      }
-
-      .main-nav a:hover {
-        color: #ffcc33; /* Color naranja más claro al pasar */
-      }
-
-      main {
-        padding: 2rem 1rem;
-      }
-
-      footer {
-        background: #222;
-        color: #fff;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
   </head>
-
   <body>
-    <canvas id="particles-canvas"></canvas>
-
-    <!-- HEADER -->
-    <header
-      class="site-header"
-      role="banner"
-      style="
-        padding: 3rem 1rem;
-        min-height: 120vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background: transparent;
-        color: #fff;
-      "
-    >
-      <!-- Título animado -->
-      <h1
-        class="site-title"
-        style="
-          font-family: 'Bricolage Grotesque', sans-serif;
-          font-size: 7rem;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          line-height: 1.2;
-          color: #ffffff;
-          text-align: center;
-          margin-bottom: 1rem;
-          position: relative;
-          z-index: 2;
-          white-space: nowrap;
-          text-shadow: 0 0 2px #fff, 0 0 4px #ffcc33, 0 0 6px #ff6600;
-          animation: neonFade 6s ease-in-out infinite alternate;
-        "
-      >
-        Análisis de 4 <br />sitios web
-      </h1>
-
-      <!-- Autor debajo del título -->
-      <p
-        style="
-          color: #ffcc99;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 2rem;
-          font-weight: 500;
-          margin-bottom: 4rem; /* más separación vertical */
-          z-index: 2;
-        "
-      >
-        Por Isaac Piña Portillo
-      </p>
-
-      <!-- Navegación debajo del título -->
-      <nav
-        class="main-nav"
-        aria-label="Navegación principal"
-        style="margin-top: 3rem; position: relative; z-index: 2"
-      >
-        <ul
-          style="
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-          "
-        >
-          <li><a href="#sitio-1">1917</a></li>
-          <li><a href="#Hyer">Hyer</a></li>
-          <li><a href="#Buttermax">Buttermax</a></li>
-          <li><a href="#Gufram">Gufram</a></li>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="./responsive/exercise-1.html">Responsive Design</a></li>
+          <li>
+            <a href="./responsive/exercise-2.html">Responsive Design 2</a>
+          </li>
+          <li><a href="./animations/index.html">Animations</a></li>
         </ul>
       </nav>
+      <!--
+				Theme Toggle: Pedagogical Explanation
+
+				This form provides a CSS-only theme toggle. It uses three radio inputs for 'Auto,' 'Light,' and 'Dark' themes. 
+				Each input has a unique id, and the corresponding labels serve as clickable toggle buttons.
+				- All inputs are 'hidden' to show only the styled label buttons.
+				- The checked input determines the selected theme. 
+				- Modern CSS (see site.css) uses :root:has(#theme-light:checked), etc., to set theme variables.
+				- "Auto" means the site will follow the user's system preference (light/dark).
+				- "Light" and "Dark" force the explicit color theme, regardless of system setting.
+
+				This approach does not require JavaScript. All logic is handled in CSS using the 'has()' selector and custom properties.
+			-->
+      <form
+        class="cluster"
+        style="justify-content: flex-end; margin-top: var(--space-2)"
+        aria-label="Theme"
+      >
+        <input type="radio" name="theme" id="theme-auto" hidden checked />
+        <input type="radio" name="theme" id="theme-light" hidden />
+        <input type="radio" name="theme" id="theme-dark" hidden />
+        <label
+          for="theme-auto"
+          class="btn btn--ghost"
+          style="height: auto; padding: 0.4rem 0.6rem"
+          >Auto</label
+        >
+        <label
+          for="theme-light"
+          class="btn btn--ghost"
+          style="height: auto; padding: 0.4rem 0.6rem"
+          >Light</label
+        >
+        <label
+          for="theme-dark"
+          class="btn btn--ghost"
+          style="height: auto; padding: 0.4rem 0.6rem"
+          >Dark</label
+        >
+      </form>
     </header>
-
-    <!-- MAIN -->
-    <main id="main" class="container" role="main">
-      <!-- SECCIONES existentes sin cambios -->
-      <!-- SECCIÓN 1: Buttermax -->
-      <section id="Buttermax" aria-labelledby="h-Buttermax">
-        <h2
-          id="h-Buttermax"
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ff6600;
-          "
-        >
-          1. Buttermax
-        </h2>
-        <figure>
-          <iframe
-            src="https://buttermax.net"
-            title="Vista previa: Buttermax"
-            width="100%"
-            height="400"
-            loading="lazy"
-          ></iframe>
-          <figcaption>Preview del sitio — Buttermax</figcaption>
-        </figure>
-        <article class="analisis" aria-labelledby="h-butter-analisis">
-          <h3 id="h-butter-analisis">Análisis</h3>
-          <h4>1. Selección</h4>
-          <p>
-            Enfoque innovador en presentación de productos industriales con
-            narrativa visual.
-          </p>
-          <h4>2. Impresión inicial</h4>
-          <p>
-            Modernidad y sofisticación; tipografía audaz y paleta contrastante.
-          </p>
-          <h4>3. Estructura</h4>
-          <p>Secciones bien definidas y flujo natural entre contenidos.</p>
-          <h4>4. Visual</h4>
-          <p>
-            Tonos amarillos y negros; imágenes y gráficos 3D aportan dinamismo.
-          </p>
-          <h4>5. Interacción</h4>
-          <p>Animaciones y microinteracciones que mejoran la experiencia.</p>
-          <h4>6. Usabilidad</h4>
-          <p>Buena legibilidad; optimizar recursos para conexiones lentas.</p>
-          <h4>7. Técnico</h4>
-          <p>
-            Recomendada auditoría de Core Web Vitals por elementos gráficos
-            complejos.
-          </p>
-          <h4>8. Criterios de excelencia</h4>
-          <p>Contenido relevante y UX positiva.</p>
-          <h4>9. Conclusión</h4>
-          <ul>
-            <li>
-              <strong>Puntos fuertes:</strong> diseño impactante y animaciones
-              efectivas.
-            </li>
-            <li><strong>Debilidades:</strong> carga alta de recursos.</li>
-            <li>
-              <strong>Aprendizajes:</strong> equilibrio entre creatividad y
-              optimización.
-            </li>
-          </ul>
-        </article>
+    <main>
+      <section>
+        <h1>Welcome to WebApp Design UDIT</h1>
+        <h2>About This WebApp</h2>
+        <p>
+          This is a sample web application design project for UDIT. Explore the
+          features and learn more about modern web development!
+        </p>
       </section>
-
-      <!-- SECCIÓN 2: Hyer -->
-      <section id="Hyer" aria-labelledby="h-Hyer">
-        <h2
-          id="h-Hyer"
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ff6600;
-          "
-        >
-          2. Hyer
-        </h2>
-        <figure>
-          <iframe
-            src="https://www.flyhyer.com"
-            title="Vista previa: Hyer"
-            width="100%"
-            height="400"
-            loading="lazy"
-          ></iframe>
-          <figcaption>Preview del sitio — Hyer</figcaption>
-        </figure>
-        <article class="analisis" aria-labelledby="h-hyer-analisis">
-          <h3 id="h-hyer-analisis">Hyer — Análisis</h3>
-          <h4>1. Selección</h4>
-          <p>
-            Combinación de identidad de marca y plataforma orientada a servicios
-            de aviación.
-          </p>
-          <h4>2. Impresión inicial</h4>
-          <p>
-            Elegancia y sensación premium: imágenes limpias y jerarquía clara.
-          </p>
-          <h4>3. Estructura</h4>
-          <p>
-            Hero con propuesta de valor, secciones de servicios y flujo hacia la
-            reserva.
-          </p>
-          <h4>4. Visual</h4>
-          <p>
-            Paleta sobria y tipografía sans moderna; branding orientado al lujo.
-          </p>
-          <h4>5. Interacción</h4>
-          <p>
-            Transiciones y microinteracciones que aportan pulido sin distraer.
-          </p>
-          <h4>6. Usabilidad</h4>
-          <p>
-            CTA visibles y rutas de conversión claras; revisar accesibilidad y
-            soporte de teclado.
-          </p>
-          <h4>7. Técnico</h4>
-          <p>
-            Optimización de assets importante para LCP y TTFB en conexiones
-            lentas.
-          </p>
-          <h4>8. Criterios de excelencia</h4>
-          <p>Presenta funcionalidad compleja de forma simple y aspiracional.</p>
-          <h4>9. Conclusión</h4>
-          <ul>
-            <li>
-              <strong>Puntos fuertes:</strong> branding coherente y UX enfocada
-              a conversión.
-            </li>
-            <li>
-              <strong>Debilidades:</strong> posible carga en conexiones lentas.
-            </li>
-            <li>
-              <strong>Aprendizajes:</strong> rendimiento y accesibilidad deben
-              acompañar la estética.
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- SECCIÓN 3: 1917 -->
-      <section id="sitio-1" aria-labelledby="h-sitio-1">
-        <h2
-          id="h-sitio-1"
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ff6600;
-          "
-        >
-          3. 1917: Into the Trenches
-        </h2>
-        <figure>
-          <iframe
-            src="https://intothetrenches.1917.movie"
-            title="Vista previa: 1917"
-            width="100%"
-            height="400"
-            loading="lazy"
-          ></iframe>
-          <figcaption>Preview del sitio — 1917: Into the Trenches</figcaption>
-        </figure>
-        <article class="analisis" aria-labelledby="sitio1-resumen">
-          <h3 id="sitio1-resumen">Análisis visual y de usabilidad</h3>
-          <h4>1. Selección</h4>
-          <p>
-            Este sitio fue reconocido como <em>Site of the Day</em> por Awwwards
-            en marzo de 2020. Destaca por ofrecer una experiencia inmersiva en
-            3D que permite al usuario adentrarse en las trincheras de la
-            película <strong>1917</strong>.
-          </p>
-          <h4>2. Impresión inicial</h4>
-          <p>
-            Transmite tensión, oscuridad y realismo. La atmósfera inmersiva y la
-            ambientación bélica hacen sentir al usuario dentro de la película.
-          </p>
-          <h4>3. Estructura</h4>
-          <p>
-            Navegación basada en un entorno 3D/interactivo: exploración por mapa
-            y accesos a making-of, entrevistas y experiencias AR/VR.
-          </p>
-          <h4>4. Visual</h4>
-          <p>
-            Paleta oscura, tipografía robusta y coherencia visual con la
-            estética de la película.
-          </p>
-          <h4>5. Interacción</h4>
-          <p>
-            WebGL, animaciones y microinteracciones que generan sensación de
-            profundidad.
-          </p>
-          <h4>6. Usabilidad</h4>
-          <p>
-            Experiencia inmersiva pero con accesibilidad limitada y requisitos
-            de recursos elevados.
-          </p>
-          <h4>7. Técnico</h4>
-          <p>
-            Uso intensivo de canvas/WebGL que puede afectar SEO y rendimiento si
-            no se optimiza.
-          </p>
-          <h4>8. Criterios de excelencia</h4>
-          <p>Creatividad alta, contenido coherente y experiencia memorable.</p>
-          <h4>9. Conclusión</h4>
-          <ul>
-            <li><strong>Puntos fuertes:</strong> inmersión y narrativa.</li>
-            <li>
-              <strong>Debilidades:</strong> accesibilidad y peso de recursos.
-            </li>
-            <li>
-              <strong>Aprendizajes:</strong> equilibrar creatividad con
-              rendimiento y accesibilidad.
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- SECCIÓN 4: Gufram -->
-      <section id="Gufram" aria-labelledby="h-Gufram">
-        <h2
-          id="h-Gufram"
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin: 2rem 0 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ff6600;
-          "
-        >
-          4. Gufram
-        </h2>
-        <figure>
-          <iframe
-            src="https://gufram.it"
-            title="Vista previa: Gufram"
-            width="100%"
-            height="400"
-            loading="lazy"
-          ></iframe>
-          <figcaption>Preview del sitio — Gufram</figcaption>
-        </figure>
-        <article class="analisis" aria-labelledby="h-gufram-analisis">
-          <h3 id="h-gufram-analisis">Análisis</h3>
-          <h4>1. Selección</h4>
-          <p>
-            Marca que fusiona arte y diseño con una presencia web reconocida por
-            su creatividad.
-          </p>
-          <h4>2. Impresión inicial</h4>
-          <p>Creatividad, audacia y exploración visual.</p>
-          <h4>3. Estructura</h4>
-          <p>
-            Menú con secciones de producto, historia y contacto; desplazamiento
-            suave.
-          </p>
-          <h4>4. Visual</h4>
-          <p>Paleta neutra con acentos vibrantes; tipografía moderna.</p>
-          <h4>5. Interacción</h4>
-          <p>
-            Animaciones sutiles y microinteracciones que mejoran la exploración.
-          </p>
-          <h4>6. Usabilidad</h4>
-          <p>
-            Buena adaptabilidad; optimizar recursos gráficos para mejorar
-            rendimiento.
-          </p>
-          <h4>7. Técnico</h4>
-          <p>
-            Recomendable auditoría técnica para LCP y FID cuando emplea
-            elementos avanzados.
-          </p>
-          <h4>8. Criterios de excelencia</h4>
-          <p>Creatividad aplicada al producto y experiencia coherente.</p>
-          <h4>9. Conclusión</h4>
-          <ul>
-            <li>
-              <strong>Puntos fuertes:</strong> diseño impactante y experiencia
-              fluida.
-            </li>
-            <li>
-              <strong>Debilidades:</strong> optimización técnica a revisar.
-            </li>
-            <li>
-              <strong>Aprendizajes:</strong> combinar creatividad con
-              performance.
-            </li>
-          </ul>
-        </article>
+      <section>
+        <h2>Features</h2>
+        <ul>
+          <li>Responsive Design</li>
+          <li>Clean Layout</li>
+          <li>Easy Navigation</li>
+        </ul>
       </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer
-      class="site-footer"
-      role="contentinfo"
-      style="
-        background: #222;
-        color: #fff;
-        padding: 2rem 1rem;
-        text-align: center;
-      "
-    >
-      <div class="container">
-        <p>© 2025 Isaac Piña Portillo — WEB ATELIER (UDIT)</p>
-      </div>
+    <footer>
+      <p>&copy; 2024 WebApp Design UDIT. All rights reserved.</p>
     </footer>
-
-    <!-- Animación partículas conectadas -->
-    <script>
-      const canvas = document.getElementById("particles-canvas");
-      const ctx = canvas.getContext("2d");
-      let width = (canvas.width = window.innerWidth);
-      let height = (canvas.height = window.innerHeight);
-      let particles = [];
-      const PARTICLE_COUNT = 80;
-      const LINE_DISTANCE = 120;
-
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: (Math.random() - 0.5) * 1.2,
-          r: Math.random() * 2 + 1,
-        });
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, width, height);
-        // Dibujar partículas
-        particles.forEach((p) => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(255,255,255,0.6)";
-          ctx.fill();
-        });
-
-        // Dibujar líneas
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-          for (let j = i + 1; j < PARTICLE_COUNT; j++) {
-            let dx = particles[i].x - particles[j].x;
-            let dy = particles[i].y - particles[j].y;
-            let dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < LINE_DISTANCE) {
-              ctx.beginPath();
-              ctx.strokeStyle =
-                "rgba(255,255,255," + (1 - dist / LINE_DISTANCE) * 0.5 + ")";
-              ctx.lineWidth = 1;
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        // Actualizar posición
-        particles.forEach((p) => {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0) p.x = width;
-          if (p.x > width) p.x = 0;
-          if (p.y < 0) p.y = height;
-          if (p.y > height) p.y = 0;
-        });
-
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-
-      window.addEventListener("resize", () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      });
-    </script>
   </body>
 </html>
